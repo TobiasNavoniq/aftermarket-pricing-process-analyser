@@ -16,10 +16,11 @@
   gap: 8px;
 }
 
-.nimg {
+/* Sized box; the image itself comes from the shared .rp-logo rule, which is
+   loaded later -- hence the extra specificity here. */
+.nlogo .nimg {
   height: 28px;
-  width: auto;
-  filter: brightness(0) invert(1);
+  width: 26px;
 }
 
 .nwm-a {

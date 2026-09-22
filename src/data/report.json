@@ -1,0 +1,46 @@
+{
+  "brand": "THINKTROOPER",
+  "kicker": "RFP COVERAGE ASSESSMENT",
+  "subtitle": "Requirement mapping against the 9-step aftermarket pricing canvas",
+  "coverNotes": [
+    {
+      "label": "WHAT THIS IS",
+      "text": "A structured reading of this RFP against the 9-step aftermarket pricing canvas. Every requirement the RFP raises is placed on the step of the canvas that owns it, marked as in scope or not applicable, and carried through with its complexity and its owner. It shows which parts of the pricing process this RFP actually loads."
+    },
+    {
+      "label": "HOW EACH FIGURE IS BUILT",
+      "text": "Every number on these pages is a count of requirements, nothing more. Coverage for a step is the requirements marked in scope divided by the requirements that apply to it, with anything marked not applicable removed from both sides. The counts are printed wherever a figure appears, so each can be checked against the requirement list itself."
+    },
+    {
+      "label": "WHAT IT IS NOT",
+      "text": "Not a cost estimate, not a scoring of vendors and not a commitment. No effort, price or delivery timeline is assumed anywhere. The assessment records which requirements were judged to apply and where they sit on the canvas; the judgement behind each one is the reader's to test."
+    }
+  ],
+  "glossary": [
+    {
+      "label": "IN SCOPE",
+      "text": "A requirement the RFP is judged to be asking for. It counts towards coverage on its canvas step."
+    },
+    {
+      "label": "NOT APPLICABLE",
+      "text": "A requirement this RFP does not raise. It is removed from both sides of the coverage calculation rather than counted as a gap."
+    },
+    {
+      "label": "COMPLEXITY",
+      "text": "The structural difficulty of the requirement, not the effort to deliver it. NFR marks a non-functional requirement."
+    },
+    {
+      "label": "OWNER",
+      "text": "Where the canvas places the step: centrally at HQ, locally in the markets, or shared across both."
+    }
+  ],
+  "closing": {
+    "title": "How to read this document",
+    "paragraphs": [
+      "This assessment maps a single RFP onto the 9-step aftermarket pricing canvas. It records which requirements the RFP raises, which step of the pricing process each one belongs to, and how heavily each step is loaded as a result. The counts describe the RFP, not the organisation behind it and not the systems that would answer it.",
+      "Every judgement on these pages — whether a requirement applies, whether it is best placed on one step or another — is a reading, and readings can differ. The requirement text and the canvas reference are printed alongside each entry so that any individual placement can be examined and argued with on its own terms.",
+      "So please treat this as a structured starting point for a conversation rather than a conclusion. Validate the mapping against the source RFP, apply your own judgement to the requirements that matter most, and involve the people who will have to answer them before drawing conclusions from the coverage figures.",
+      "Thanks for reading it carefully, which is exactly how it is meant to be read."
+    ]
+  }
+}

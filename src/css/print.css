@@ -1,0 +1,49 @@
+/* Paged media -------------------------------------------------------------
+ * Printing swaps the application out for the generated report in #report, so
+ * Ctrl+P produces the full document no matter which view is on screen.
+ */
+
+@media print {
+
+  @page { size: A4 landscape; margin: 0; }
+
+  /* The screen layout is a locked 100vh flex column with its content inside a
+     scroll container, which on paper clips everything below the fold. The
+     whole chain has to go back to normal flow. */
+  html, body {
+    height: auto;
+    overflow: visible;
+    display: block;
+    background: #fff;
+  }
+
+  /* The application itself never prints. */
+  .nav, .sb, .ttfoot, .rfpw, .app { display: none !important; }
+
+  #report { display: block !important; }
+
+  /* Backgrounds carry meaning here -- the dark cover, the header band, the
+     coverage bars -- so they must survive Chrome's default of dropping them. */
+  #report, #report * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* One page per section, and never split one. */
+  .rp {
+    break-inside: avoid;
+    break-after: page;
+  }
+
+  .rp:last-child { break-after: auto; }
+
+  .rp-req, .rp-gr, .rp-call, .rp-note, .rp-gl, .rp-lev { break-inside: avoid; }
+
+  a[href]::after { content: ""; }
+}
+
+/* On screen the report stays hidden, but keep it out of the flow entirely so
+   it can never affect layout or tab order. */
+@media screen {
+  #report { display: none !important; }
+}

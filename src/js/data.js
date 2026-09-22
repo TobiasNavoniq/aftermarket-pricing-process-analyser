@@ -10,13 +10,16 @@ function loadData() {
   if (window.RFP_BUNDLED_DATA) {
     CC = window.RFP_BUNDLED_DATA.canvasColors;
     STEPS = window.RFP_BUNDLED_DATA.steps;
+    RPT = window.RFP_BUNDLED_DATA.report;
     return Promise.resolve();
   }
   return Promise.all([
     fetch('data/canvas-colors.json').then(function (r) { return r.json(); }),
-    fetch('data/steps.json').then(function (r) { return r.json(); })
+    fetch('data/steps.json').then(function (r) { return r.json(); }),
+    fetch('data/report.json').then(function (r) { return r.json(); })
   ]).then(function (res) {
     CC = res[0];
     STEPS = res[1];
+    RPT = res[2];
   });
 }

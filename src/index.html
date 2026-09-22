@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkTrooper — Aftermarket Pricing Process Analyser</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/welcome.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/step.css">
+<link rel="stylesheet" href="css/summary.css">
+<link rel="stylesheet" href="css/report.css">
+<link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+
+
+<div class="nav">
+  <div class="nlogo">
+    <span class="nimg rp-logo" role="img" aria-label="ThinkTrooper"></span>
+    <div><div class="nwm-a">THINKTROOPER</div><div class="nwm-b">Advisory Automation</div></div>
+  </div>
+  <div class="ndiv"></div>
+  <div>
+    <div class="ntitle">Aftermarket Pricing Process Analyser</div>
+    <div class="nsub">Internal &middot; Aftermarket Pricing &middot; Step 1 of 2</div>
+  </div>
+  <div class="nright">
+    <span class="npill" id="npill">0 / 0 marked</span>
+    <button class="nbtn p" id="btnNew">New RFP</button>
+  </div>
+</div>
+
+<!-- Welcome / start screen -->
+<div class="rfpw" id="rfpWelcome">
+  <div class="rfpw-wrap">
+    <div class="rfpw-hero">
+      <h1>Aftermarket Pricing Process Analyser</h1>
+      <p>An internal tool for reading an OEM&apos;s aftermarket pricing RFP and mapping it to the 9-step pricing canvas. Nothing here is shown to the OEM &mdash; it is preparation for your own response.</p>
+    </div>
+    <div class="rfpw-steps">
+      <div class="rfpw-card">
+        <div class="rfpw-card-num">1</div>
+        <h3>Read step by step</h3>
+        <p>Work through the 9 canvas steps in order. For each step, read the pre-loaded requirement library alongside the RFP in front of you.</p>
+      </div>
+      <div class="rfpw-card">
+        <div class="rfpw-card-num">2</div>
+        <h3>Mark what applies</h3>
+        <p>Tick each requirement that matches what the RFP is asking for, or mark it N/A. Add notes where the wording is specific.</p>
+      </div>
+      <div class="rfpw-card">
+        <div class="rfpw-card-num">3</div>
+        <h3>Get the coverage summary</h3>
+        <p>See which canvas steps this RFP loads most. Hand this off to the Aftermarket Pricing Process Analyser for the next stage of interpretation.</p>
+      </div>
+    </div>
+    <div class="rfpw-form">
+      <input type="text" class="rfpw-input" id="wEngIn" placeholder="OEM / account name&hellip;">
+      <select class="rfpw-select" id="wArcSel">
+        <option value="">&#8212; OEM type (optional) &#8212;</option>
+        <option value="luxury">Luxury OEM</option>
+        <option value="volume">Volume OEM</option>
+        <option value="industrial">Industrial / CE</option>
+        <option value="iam">IAM / Independent</option>
+      </select>
+      <button class="rfpw-start" id="wStartBtn">Start reading &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<!-- Main application -->
+<div class="app" id="rfpApp" style="display:none">
+  <div class="sb">
+    <div class="sbh">
+      <div class="sblbl">Engagement</div>
+      <input class="sbin" id="engIn" placeholder="Client / RFP name&hellip;">
+      <div class="sblbl" style="margin-top:8px">OEM Type</div>
+      <select class="sbsel" id="arcSel">
+        <option value="">&#8212; Select archetype &#8212;</option>
+        <option value="luxury">Luxury OEM</option>
+        <option value="volume">Volume OEM</option>
+        <option value="industrial">Industrial / CE</option>
+        <option value="iam">IAM / Independent</option>
+      </select>
+    </div>
+    <div class="sbsteps" id="sbsteps"></div>
+    <div class="sbft">
+      <div class="plbl"><span>Progress</span><span id="pPct">0%</span></div>
+      <div class="pbar"><div class="pfill" id="pFill" style="width:0%"></div></div>
+      <button class="sbsumbtn" id="btnSum">Coverage Summary &rarr;</button>
+    </div>
+  </div>
+  <div class="mn" id="mn">
+    <div class="ca" id="sv"></div>
+    <div class="ca" id="sumv" style="display:none"></div>
+  </div>
+</div>
+
+<div id="report"></div>
+
+<div class="ttfoot">ThinkTrooper &middot; Aftermarket Pricing Process Analyser v2.0 &middot; 2026</div>
+
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/view-sidebar.js"></script>
+<script src="js/view-step.js"></script>
+<script src="js/view-summary.js"></script>
+<script src="js/report.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+/* Printable report template ----------------------------------------------
+ * Landscape A4. Dark cover, dark header band on light interior pages.
+ * Segoe UI for prose, Consolas for labels and figures -- both ship with
+ * Windows, so the standalone file needs no web fonts.
+ */
+
+:root {
+  --rp-ink:      #0b1622;   /* cover and header band */
+  --rp-slate:    #223449;
+  --rp-line:     #dce2e9;   /* hairlines */
+  --rp-wash:     #edf0f4;   /* hollow bar segments, table zebra */
+  --rp-wash2:    #f4f6f8;
+  --rp-text:     #1a2634;
+  --rp-mute:     #5a7a96;
+  --rp-dim:      #8fa8be;
+  --rp-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --rp-mono: Consolas, "Cascadia Mono", "Courier New", monospace;
+}
+
+/* The report only exists on paper. */
+#report { display: none; }
+
+/* -- page frame ---------------------------------------------------------- */
+
+.rp {
+  width: 297mm;
+  height: 210mm;
+  padding: 0 14mm 10mm;
+  background: #fff;
+  color: var(--rp-text);
+  font-family: var(--rp-sans);
+  font-size: 9pt;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.rp + .rp { break-before: page; }
+
+.rp-top {
+  height: 16mm;
+  margin: 0 -14mm;
+  padding: 0 14mm;
+  background: var(--rp-ink);
+  display: flex;
+  align-items: center;
+  gap: 10mm;
+  flex-shrink: 0;
+}
+
+.rp-brand { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+/* One shared logo rule; the build inlines the image here exactly once. */
+.rp-logo {
+  width: 16px;
+  height: 17px;
+  background: url("../assets/logo.png") no-repeat center / contain;
+  filter: brightness(0) invert(1);
+}
+
+.rp-wm {
+  font-family: var(--rp-sans);
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #fff;
+}
+
+.rp-run {
+  font-family: var(--rp-mono);
+  font-size: 6.4pt;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .55);
+  border-left: 1px solid rgba(255, 255, 255, .2);
+  padding-left: 10mm;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rp-pg {
+  font-family: var(--rp-mono);
+  font-size: 6.4pt;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .55);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* The three-colour gradient rule under every header. */
+.rp-rule {
+  height: 2px;
+  margin: 0 -14mm;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #3d6bd6 0%, #d6288a 50%, #12a08a 100%);
+}
+
+.rp-body {
+  flex: 1;
+  min-height: 0;
+  padding-top: 6mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.rp-fine {
+  flex-shrink: 0;
+  font-family: var(--rp-mono);
+  font-size: 5.4pt;
+  line-height: 1.5;
+  letter-spacing: .02em;
+  color: var(--rp-dim);
+  border-top: 1px solid var(--rp-line);
+  padding-top: 2.5mm;
+  margin-top: 3mm;
+}
+
+/* -- shared type --------------------------------------------------------- */
+
+.rp-kick {
+  font-family: var(--rp-mono);
+  font-size: 6.6pt;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: #3d6bd6;
+  margin-bottom: 3mm;
+}
+
+.rp-h1 {
+  font-size: 30pt;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 2mm;
+}
+
+.rp-h2 {
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+  color: var(--rp-ink);
+  margin-bottom: 3mm;
+  max-width: 235mm;
+}
+
+.rp-stand {
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: var(--rp-text);
+  max-width: 250mm;
+  padding-bottom: 3.5mm;
+  border-bottom: 1px solid var(--rp-line);
+  margin-bottom: 4mm;
+}
+
+.rp-stand b { font-weight: 600; }
+
+.rp-cap {
+  font-family: var(--rp-mono);
+  font-size: 5.6pt;
+  line-height: 1.55;
+  color: var(--rp-dim);
+  margin-top: 2mm;
+}
+
+.rp-exh {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3mm;
+}
+
+.rp-exh-no {
+  font-family: var(--rp-mono);
+  font-size: 6pt;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: #fff;
+  background: var(--rp-ink);
+  padding: 2px 7px;
+}
+
+.rp-exh-t { font-size: 10pt; font-weight: 600; color: var(--rp-ink); }
+
+/* -- coverage bar -------------------------------------------------------- */
+
+.rp-bar {
+  display: flex;
+  height: 6mm;
+  background: var(--rp-wash);
+  overflow: hidden;
+}
+
+.rp-seg { height: 100%; }
+.rp-seg.open { background: var(--rp-wash); box-shadow: inset 0 0 0 1px #fff; }
+.rp-seg.na {
+  background: repeating-linear-gradient(45deg,
+    #e3e8ee 0 3px, #f4f6f8 3px 6px);
+}
+
+.rp-key {
+  display: flex;
+  gap: 7mm;
+  margin-top: 2mm;
+  margin-bottom: 5mm;
+  font-family: var(--rp-mono);
+  font-size: 6.2pt;
+  color: var(--rp-mute);
+}
+
+.rp-k { display: flex; align-items: center; gap: 5px; }
+.rp-k b { color: var(--rp-ink); }
+.rp-sw { width: 9px; height: 9px; flex-shrink: 0; }
+.rp-sw.open { background: var(--rp-wash); box-shadow: inset 0 0 0 1px var(--rp-line); }
+.rp-sw.na {
+  background: repeating-linear-gradient(45deg, #e3e8ee 0 3px, #f4f6f8 3px 6px);
+}
+
+/* -- metadata strip ------------------------------------------------------ */
+
+.rp-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  margin-top: auto;
+}
+
+.rp-meta-c {
+  padding: 3mm 6mm 3mm 0;
+  border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.rp-meta-c:last-child { border-right: 0; }
+.rp-meta-c:nth-child(4n) { border-right: 0; }
+
+.rp-meta-l {
+  font-family: var(--rp-mono);
+  font-size: 5.8pt;
+  letter-spacing: .16em;
+  color: rgba(255, 255, 255, .4);
+  margin-bottom: 1.5mm;
+}
+
+.rp-meta-v {
+  font-family: var(--rp-mono);
+  font-size: 8.2pt;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Light variant, used on the step pages. */
+.rp-meta-lt {
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid var(--rp-line);
+  background: var(--rp-wash2);
+}
+
+.rp-meta-lt .rp-meta-c {
+  padding: 2.5mm 5mm;
+  border-right: 1px solid var(--rp-line);
+}
+
+.rp-meta-lt .rp-meta-c:last-child { border-right: 0; }
+.rp-meta-lt .rp-meta-l { color: var(--rp-dim); }
+.rp-meta-lt .rp-meta-v { color: var(--rp-ink); font-size: 8pt; }
+
+/* -- cover --------------------------------------------------------------- */
+
+.rp-cover { background: var(--rp-ink); color: rgba(255, 255, 255, .8); }
+.rp-cover .rp-top { background: transparent; }
+.rp-cover .rp-kick { color: var(--rp-dim); }
+
+.rp-sub { font-size: 10pt; color: rgba(255, 255, 255, .62); }
+
+.rp-hr { height: 1px; background: rgba(255, 255, 255, .14); margin: 5mm 0 4mm; }
+
+.rp-big {
+  font-family: var(--rp-mono);
+  font-size: 26pt;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: #8fb4ff;
+  line-height: 1;
+}
+
+.rp-bigcap {
+  font-family: var(--rp-mono);
+  font-size: 6.2pt;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .45);
+  margin-top: 2.5mm;
+}
+
+.rp-levs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6mm;
+  margin: 6mm 0 2mm;
+}
+
+.rp-lev { border-top: 2px solid; padding-top: 2.5mm; }
+
+.rp-lev-l {
+  font-family: var(--rp-mono);
+  font-size: 5.8pt;
+  letter-spacing: .14em;
+  color: rgba(255, 255, 255, .5);
+  margin-bottom: 2mm;
+  min-height: 7mm;
+}
+
+.rp-lev-n {
+  font-family: var(--rp-mono);
+  font-size: 15pt;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.rp-lev-d { font-size: 9pt; font-weight: 400; color: rgba(255, 255, 255, .4); }
+
+.rp-lev-s {
+  font-size: 7.4pt;
+  color: rgba(255, 255, 255, .5);
+  margin-top: 1.5mm;
+}
+
+.rp-notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  padding-top: 3.5mm;
+  margin-top: 3.5mm;
+}
+
+.rp-note-l {
+  font-family: var(--rp-mono);
+  font-size: 6.2pt;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: #fff;
+  margin-bottom: 2mm;
+}
+
+.rp-note-t { font-size: 7.6pt; line-height: 1.55; color: rgba(255, 255, 255, .58); }
+
+/* -- executive summary --------------------------------------------------- */
+
+.rp-calls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--rp-line);
+  margin-bottom: 5mm;
+}
+
+.rp-call { padding: 3mm 5mm; border-right: 1px solid var(--rp-line); }
+.rp-call:last-child { border-right: 0; }
+
+.rp-call-l {
+  font-family: var(--rp-mono);
+  font-size: 5.8pt;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--rp-dim);
+  margin-bottom: 1.5mm;
+}
+
+.rp-call-n {
+  font-family: var(--rp-mono);
+  font-size: 15pt;
+  font-weight: 700;
+  color: #3d6bd6;
+  line-height: 1.1;
+  margin-bottom: 1.5mm;
+}
+
+.rp-call-t { font-size: 7.6pt; line-height: 1.5; color: var(--rp-mute); }
+
+.rp-cols { display: grid; grid-template-columns: 1fr 1.35fr; gap: 10mm; }
+
+/* coverage-by-group rows */
+.rp-grs { display: flex; flex-direction: column; gap: 2.5mm; }
+
+.rp-gr {
+  display: grid;
+  grid-template-columns: 34mm 1fr 12mm 10mm;
+  align-items: center;
+  gap: 3mm;
+}
+
+.rp-gr-n { font-size: 8pt; font-weight: 600; }
+.rp-gr-b .rp-bar { height: 5mm; }
+
+.rp-gr-c, .rp-gr-p {
+  font-family: var(--rp-mono);
+  font-size: 7.4pt;
+  font-weight: 700;
+  text-align: right;
+  color: var(--rp-ink);
+}
+
+.rp-gr-p { color: var(--rp-mute); font-weight: 400; }
+
+/* ranked step table */
+.rp-tbl { width: 100%; border-collapse: collapse; }
+
+.rp-tbl th {
+  font-family: var(--rp-mono);
+  font-size: 5.6pt;
+  font-weight: 400;
+  letter-spacing: .14em;
+  color: var(--rp-dim);
+  text-align: left;
+  padding: 0 2mm 1.5mm 0;
+  border-bottom: 1px solid var(--rp-line);
+  white-space: nowrap;
+}
+
+.rp-tbl td {
+  font-size: 7.4pt;
+  padding: 1.6mm 2mm 1.6mm 0;
+  border-bottom: 1px solid var(--rp-line);
+  vertical-align: middle;
+}
+
+.rp-tbl tbody tr:last-child td { border-bottom: 0; }
+
+.rp-t-n {
+  font-family: var(--rp-mono);
+  font-size: 7.4pt;
+  font-weight: 700;
+  width: 6mm;
+}
+
+.rp-t-s { font-weight: 600; color: var(--rp-ink); }
+.rp-t-g, .rp-t-o { color: var(--rp-mute); font-size: 7pt; }
+
+.rp-t-c, .rp-t-p {
+  font-family: var(--rp-mono);
+  font-size: 7.2pt;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.rp-t-c { font-weight: 700; color: var(--rp-ink); }
+.rp-t-p { color: var(--rp-mute); }
+.rp-t-b { width: 22mm; }
+.rp-t-b .rp-bar { height: 3.2mm; }
+
+/* glossary strip */
+.rp-gls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8mm;
+  border-top: 1px solid var(--rp-line);
+  padding-top: 3mm;
+  margin-top: auto;
+}
+
+.rp-gl-l {
+  font-family: var(--rp-mono);
+  font-size: 5.8pt;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--rp-ink);
+  margin-bottom: 1.5mm;
+}
+
+.rp-gl-t { font-size: 7.2pt; line-height: 1.5; color: var(--rp-mute); }
+
+/* -- step chapters ------------------------------------------------------- */
+
+.rp-reqs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3mm 6mm;
+  margin-bottom: 4mm;
+}
+
+.rp-req {
+  border: 1px solid var(--rp-line);
+  border-left: 3px solid var(--rp-line);
+  padding: 2.5mm 4mm 3mm;
+  background: #fff;
+}
+
+.rp-req.na { background: var(--rp-wash2); opacity: .72; }
+
+.rp-req-h {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 1.5mm;
+}
+
+.rp-req-id {
+  font-family: var(--rp-mono);
+  font-size: 6.2pt;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--rp-dim);
+  flex-shrink: 0;
+}
+
+.rp-req-t {
+  font-size: 8.6pt;
+  font-weight: 600;
+  color: var(--rp-ink);
+  flex: 1;
+  line-height: 1.3;
+}
+
+.rp-req-m {
+  font-family: var(--rp-mono);
+  font-size: 5.4pt;
+  font-weight: 700;
+  letter-spacing: .12em;
+  padding: 1.5px 5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.rp-req-m.is   { background: var(--rp-ink); color: #fff; }
+.rp-req-m.open { background: var(--rp-wash); color: var(--rp-mute); }
+.rp-req-m.na   { background: transparent; color: var(--rp-dim);
+                 box-shadow: inset 0 0 0 1px var(--rp-line); }
+
+.rp-req-p { font-size: 7.4pt; line-height: 1.5; color: var(--rp-mute); }
+
+.rp-req-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 2mm;
+}
+
+.rp-tag {
+  font-family: var(--rp-mono);
+  font-size: 5.4pt;
+  letter-spacing: .08em;
+  color: var(--rp-mute);
+  border: 1px solid var(--rp-line);
+  padding: 1px 4px;
+}
+
+.rp-req-note {
+  font-size: 7.2pt;
+  line-height: 1.5;
+  color: var(--rp-text);
+  background: var(--rp-wash2);
+  border-left: 2px solid var(--rp-dim);
+  padding: 1.5mm 3mm;
+  margin-top: 2mm;
+}
+
+.rp-req-note-l {
+  font-family: var(--rp-mono);
+  font-size: 5.4pt;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--rp-dim);
+  display: block;
+  margin-bottom: .8mm;
+}
+
+/* -- closing page -------------------------------------------------------- */
+
+/* .rp-body is a flex column, so vertical centring is justify-content. */
+.rp-closing .rp-body { justify-content: center; }
+.rp-close { max-width: 165mm; margin: 0 auto; }
+.rp-close-p { font-size: 9.5pt; line-height: 1.7; color: var(--rp-mute); margin-bottom: 4mm; }
+.rp-close-p:last-child { margin-bottom: 0; color: var(--rp-text); }
