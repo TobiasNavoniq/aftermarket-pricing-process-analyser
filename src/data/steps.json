@@ -1,0 +1,324 @@
+[
+  {
+    "id": "s1",
+    "n": 1,
+    "name": "Price Structure Definition",
+    "canvas": "Price Strategy",
+    "owner": "HQ",
+    "desc": "Segmentation, master-data hierarchy, reference price framework, approval governance.",
+    "reqs": [
+      {
+        "id": "R1a",
+        "src": "OEM RFP · Ref 17",
+        "title": "Part category hierarchy",
+        "plain": "Establish commercially appropriate hierarchical categories for all part numbers (including historical parts) with consistent naming. Support category upload if not already in the OEM system.",
+        "ref": "C105 Master-data hierarchy gaps",
+        "cx": "Medium"
+      },
+      {
+        "id": "R1b",
+        "src": "OEM RFP · Ref 16",
+        "title": "Multi-dimensional pricing",
+        "plain": "Support different prices for the same part across market, model, programme, and channel dimensions simultaneously.",
+        "ref": "C101 Segmentation framework",
+        "cx": "High"
+      },
+      {
+        "id": "R1c",
+        "src": "OEM RFP · Ref 22/28/29",
+        "title": "Role-based permissions and approval governance",
+        "plain": "Tiered access levels per user. When a user lacks authority, automatically trigger an in-system approval loop. Separate admin roles from pricing roles.",
+        "ref": "C104 Governance + U14 Approval workflow",
+        "cx": "Medium"
+      },
+      {
+        "id": "R1d",
+        "src": "Multiple OEM RFPs",
+        "title": "Segmentation and pricing rules framework",
+        "plain": "Group parts into families and clusters so pricing rules can be applied at scale by segment rather than part by part.",
+        "ref": "C101 Segmentation framework",
+        "cx": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "s2",
+    "n": 2,
+    "name": "Initial Price Creation",
+    "canvas": "Price Setting",
+    "owner": "HQ",
+    "desc": "New-part pricing, cost-plus / mark-up methods, bulk loads, replacements, bundles.",
+    "reqs": [
+      {
+        "id": "R2a",
+        "src": "OEM RFP · Ref 9",
+        "title": "Bulk repricing at scale",
+        "plain": "Handle mass price changes across millions of price points without errors. Include a profit-impact preview and validation before activation.",
+        "ref": "C205 Bulk upload + U06",
+        "cx": "High"
+      },
+      {
+        "id": "R2b",
+        "src": "OEM RFP · Ref 10",
+        "title": "SKU search and handling at scale",
+        "plain": "Search and handle millions of individual SKUs without performance degradation. This is a standalone technical non-functional requirement.",
+        "ref": "Technology and Integration - Performance",
+        "cx": "High (NFR)"
+      },
+      {
+        "id": "R2c",
+        "src": "OEM RFP · Ref 20",
+        "title": "Part linkage - kits, supersessions, variants",
+        "plain": "Link related part numbers: parts within a kit, supersession chains, LH/RH variants, and replacement relationships. Price changes must propagate correctly.",
+        "ref": "C204 Supersession and linkage breaks",
+        "cx": "Medium"
+      },
+      {
+        "id": "R2d",
+        "src": "Multiple OEM RFPs",
+        "title": "Method-specific pricing with corridor governance",
+        "plain": "Support multiple calculation methods (cost-plus, mark-up, fixed, value-based) per segment with configurable price corridors enforced automatically.",
+        "ref": "C107 + U05 Method-specific pricing",
+        "cx": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "s3",
+    "n": 3,
+    "name": "Central Price Adjustments",
+    "canvas": "Price Setting",
+    "owner": "HQ",
+    "desc": "Cost-triggered repricing, surcharges, tariffs, FX threshold recalculation, channel linkage.",
+    "reqs": [
+      {
+        "id": "R3a",
+        "src": "OEM RFP · Ref 6/7",
+        "title": "Cost visibility - PIR, MAC, tariffs, freight",
+        "plain": "Surface Purchase Information Records and Moving Average Cost from SAP as live as possible. Tariffs and freight elements must also be visible to support pricing decisions.",
+        "ref": "C301 Cost-change triggers + C304 Surcharge handling",
+        "cx": "Medium"
+      },
+      {
+        "id": "R3b",
+        "src": "OEM RFP · Ref 23",
+        "title": "Surcharge handling - remanufacture return",
+        "plain": "Support surcharges against specific parts such as remanufacture-return incentives. All downstream pricing systems must handle the surcharge price correctly.",
+        "ref": "C304 + U13 Return-deposit pricing",
+        "cx": "Medium"
+      },
+      {
+        "id": "R3c",
+        "src": "Multiple OEM RFPs",
+        "title": "FX threshold-triggered recalculation",
+        "plain": "Automatically recalculate affected market prices when FX rates move beyond a configurable threshold - without manual intervention.",
+        "ref": "C302 FX-rate exposure + U07 Central price adjustments",
+        "cx": "High"
+      },
+      {
+        "id": "R3d",
+        "src": "OEM RFP · Ref 15",
+        "title": "Cost and price change monitoring",
+        "plain": "Monitor cost and price changes over time by part, market, and category - surfacing where margins are drifting or action is needed.",
+        "ref": "C305 + U08 Central pricing and action reporting",
+        "cx": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "s4",
+    "n": 4,
+    "name": "HQ to Market Handover",
+    "canvas": "Price Steering",
+    "owner": "HQ",
+    "desc": "Releasing approved central prices to markets - controlled, transparent, with confirmed receipt.",
+    "reqs": [
+      {
+        "id": "R4a",
+        "src": "OEM RFP · Ref 2",
+        "title": "No discrepancy across connected systems",
+        "plain": "No discrepancy between the pricing tool and downstream systems such as the ordering system and dealer DMS. The storage strategy across all systems must keep prices consistent through the full handover chain.",
+        "ref": "C404 Disconnected systems + C805 Validity-date sync",
+        "cx": "High"
+      },
+      {
+        "id": "R4b",
+        "src": "Multiple OEM RFPs",
+        "title": "Separation of approval, communication, and activation dates",
+        "plain": "The system must cleanly separate when a price is approved, when it is communicated to markets, and when it activates in operational systems. These are three distinct dates - conflating them is a common failure mode.",
+        "ref": "C803 Timing entangled + U09 HQ to Market handover",
+        "cx": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "s5",
+    "n": 5,
+    "name": "Market Price Derivation",
+    "canvas": "Price Steering",
+    "owner": "Markets",
+    "desc": "Local retail and dealer-net derivation from central prices, applying FX, markups, corridors, and local rules.",
+    "reqs": [
+      {
+        "id": "R5a",
+        "src": "OEM RFP · Ref 1/3",
+        "title": "Independent retail and wholesale calculation",
+        "plain": "Retail and wholesale prices must be calculated independently. Some OEMs derive wholesale from retail rather than the reverse - this dependency must be configurable.",
+        "ref": "U01 Pricing methods + U11 Dealer-net derivation",
+        "cx": "Medium"
+      },
+      {
+        "id": "R5b",
+        "src": "OEM RFP · Ref 11",
+        "title": "Rule-based pricing with margin restrictions",
+        "plain": "Enforce rule-based pricing: min/max rules, margin floors, and margin restrictions. Prices that would breach these rules must be flagged or blocked before activation.",
+        "ref": "C503 Corridors + C603 Margin floor + U01",
+        "cx": "Medium"
+      },
+      {
+        "id": "R5c",
+        "src": "OEM RFP · Ref 4",
+        "title": "Automatic rounding and psychological pricing",
+        "plain": "Automatically apply rounding rules to final prices, for example converting 19.88 to 19.99. Multiple rounding rule sets must be configurable per market or segment.",
+        "ref": "C106 Rounding inconsistency + U02 Central rounding rules",
+        "cx": "Low"
+      },
+      {
+        "id": "R5d",
+        "src": "Multiple OEM RFPs",
+        "title": "Price waterfall with scoring and corridor logic",
+        "plain": "Market price derivation must follow a defined waterfall from European list price through country list price, dealer net, to customer price - with margin scoring, competitive corridor checks, and FX application at each stage.",
+        "ref": "U11 Market price derivation + C501 to C506",
+        "cx": "High"
+      }
+    ]
+  },
+  {
+    "id": "s6",
+    "n": 6,
+    "name": "Market Price Changes",
+    "canvas": "Price Execution",
+    "owner": "Markets",
+    "desc": "Targeted local adjustments, differentiated increases, simulation toward targets, approval workflows.",
+    "reqs": [
+      {
+        "id": "R6a",
+        "src": "OEM RFP · Ref 15",
+        "title": "Price performance monitoring and alerting",
+        "plain": "Alert users to pricing events: a margin has dropped below acceptable levels, a price has been manually overridden and not reverted, or performance is drifting from target.",
+        "ref": "C606 Weak local performance analysis + C605 No target-seeking simulation",
+        "cx": "Medium"
+      },
+      {
+        "id": "R6b",
+        "src": "Multiple OEM RFPs",
+        "title": "Simulation and scenario management",
+        "plain": "Users must simulate price changes - iterating toward a margin or revenue target - without committing them. Named scenarios must be saveable and shareable. Approval timing must be separable from activation timing.",
+        "ref": "C605 No target-seeking simulation + U15 Simulate and conduct general increase",
+        "cx": "High"
+      },
+      {
+        "id": "R6c",
+        "src": "OEM RFP · Ref 14",
+        "title": "Notes, comments, and team coordination flags",
+        "plain": "Users must attach notes, comments, and coordination flags to price records and changes so the team can track reasoning without going to email.",
+        "ref": "UX feature - not currently in canvas",
+        "cx": "Low"
+      }
+    ]
+  },
+  {
+    "id": "s7",
+    "n": 7,
+    "name": "Campaigns and Special Prices",
+    "canvas": "Price Execution",
+    "owner": "Markets",
+    "desc": "Promotional prices, key-account specials, distributor lists, dealer bonuses, agreements.",
+    "reqs": [
+      {
+        "id": "R7a",
+        "src": "Multiple OEM RFPs",
+        "title": "Campaign pricing with margin floor and auto-revert",
+        "plain": "Temporary promotional prices must have a defined validity window, minimum-margin check before activation, and automatic reversion when the campaign ends. No manual cleanup required.",
+        "ref": "C701 Campaign pricing uncontrolled + U16 Campaign and promotion pricing",
+        "cx": "Medium"
+      },
+      {
+        "id": "R7b",
+        "src": "Multiple OEM RFPs",
+        "title": "Special prices for distributors, importers, key accounts",
+        "plain": "Capture and maintain distributor, importer, and key-account price lists with eligibility control. Requests must be governed, time-bound, and validated against margin floors.",
+        "ref": "C702 Special and regional price requests + U17",
+        "cx": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "s8",
+    "n": 8,
+    "name": "Price Publication and Distribution",
+    "canvas": "Price Transactions",
+    "owner": "HQ + Markets",
+    "desc": "Publishing approved prices to ERP, logistics, invoicing - with timing, receipt confirmation, consistency.",
+    "reqs": [
+      {
+        "id": "R8a",
+        "src": "OEM RFP · Ref 1/2",
+        "title": "Multi-system price consistency and distribution",
+        "plain": "Reliably publish approved prices to all consuming systems - ERP, ordering, logistics, DMS - with validated timing. Confirm receipt. Surface cross-market price differences and validity mismatches.",
+        "ref": "C801 Publication fragile + C805 Cross-market differences + U18",
+        "cx": "High"
+      },
+      {
+        "id": "R8b",
+        "src": "OEM RFP · Ref 24/25",
+        "title": "Internal price lists and Warranty Charge Back",
+        "plain": "Generate and distribute internal price lists by rule, including Warranty Charge Back values and internal regional-account prices. These are distinct from the retail and wholesale distribution chain.",
+        "ref": "U18 Publication + U19 Market price distribution",
+        "cx": "Medium"
+      },
+      {
+        "id": "R8c",
+        "src": "Multiple OEM RFPs",
+        "title": "Distribution timing separated from approval and activation",
+        "plain": "Approval date, communication date to markets, and system activation date must be three separately controllable dates. Distributing too early or activating unannounced are recurring failure modes.",
+        "ref": "C803 Timing and communication entangled",
+        "cx": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "s9",
+    "n": 9,
+    "name": "Audit, History and Compliance",
+    "canvas": "Price Transactions",
+    "owner": "HQ + Markets",
+    "desc": "Full traceability of every price change - who, what, when, why - with long-term retention.",
+    "reqs": [
+      {
+        "id": "R9a",
+        "src": "OEM RFP · Ref 27",
+        "title": "Full audit trail and change logging",
+        "plain": "Every price change, approval, and manual action must be fully logged with a unique reference, timestamp, user, and rationale. This requirement appears in every automotive aftermarket RFP.",
+        "ref": "U20 Audit trail - recurs in every RFP",
+        "cx": "Medium"
+      },
+      {
+        "id": "R9b",
+        "src": "Multiple OEM RFPs",
+        "title": "End-to-end traceability to rule and cost",
+        "plain": "A price point must be traceable all the way back to the rule, driver, cost element, and approval that produced it. The question how did we arrive at this price must be answerable from the system.",
+        "ref": "C902 No end-to-end traceability",
+        "cx": "High"
+      },
+      {
+        "id": "R9c",
+        "src": "Multiple OEM RFPs",
+        "title": "Retention, deletion, and data-subject compliance",
+        "plain": "Data retention periods, often 10 to 15 years in automotive, and deletion obligations including GDPR data-subject requests must be enforced systematically rather than managed manually.",
+        "ref": "C904 Retention and deletion not enforced",
+        "cx": "Medium"
+      }
+    ]
+  }
+]

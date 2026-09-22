@@ -1,0 +1,242 @@
+BMW AFTERMARKET PRICING VALUE IMPACT ANALYSIS
+PowerPoint Slide Specification (16:9 format)
+=============================================================================
+
+SLIDE TITLE (Top Banner)
+-------------------------
+BMW Aftermarket Parts Pricing: Value Impact by Process Step
+Subtitle: Standardized per €100M Revenue | Industry Benchmarks | 9-Step Process Analysis
+
+COLOR SCHEME
+------------
+- Header: BMW Blue (#1F4E78)
+- Subheaders: Light Blue (#4472C4)
+- Positive Impact: Green (#70AD47)
+- Negative Impact/Risk: Red (#C55A11)
+- Neutral/Info: Grey (#7F7F7F)
+- Highlight: Yellow (#FFC000)
+
+=============================================================================
+LAYOUT: 3-COLUMN STRUCTURE
+=============================================================================
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  BMW Aftermarket Pricing Value Impact Analysis                          │
+│  Per €100M Revenue | 9-Step Process | Industry Benchmarks              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────┬──────────────────────────┬─────────────────────────┐
+│   SECTION 1      │      SECTION 2           │     SECTION 3          │
+│   KEY KPIs       │   PROCESS VALUE IMPACT   │  SOURCES & BENCHMARKS  │
+│   (25% width)    │      (45% width)         │     (30% width)        │
+└──────────────────┴──────────────────────────┴─────────────────────────┘
+
+=============================================================================
+SECTION 1: KEY PRICING KPIs (Left Column - 25%)
+=============================================================================
+
+HEADER: "Critical KPIs for BMW Aftermarket"
+
+TABLE FORMAT:
+┌─────────────────────────┬──────────┬──────────┐
+│ KPI                     │ Benchmark│ BMW      │
+├─────────────────────────┼──────────┼──────────┤
+│ Price Realization       │ 88-94%   │ 91%     │
+│ Gross Margin            │ 30-50%   │ 39-45%  │
+│ Discount Leakage        │ 3-8pp    │ <3pp    │
+│ Obsolescence Rate       │ 2-5%     │ 3.2%    │
+│ Inventory Turns         │ 3.8-4.5x │ 4.2x    │
+│ GMROII                  │ 2.5-3.2x │ 2.8x    │
+│ Service Level           │ 95-98%   │ 97%     │
+│ New Part Cycle          │ N/A      │ <30sec  │
+│ Forecast Accuracy       │ 15-25%   │ <20%    │
+└─────────────────────────┴──────────┴──────────┘
+
+COLOR CODING:
+- Value Optimization KPIs: Green background
+- Cost Avoidance KPIs: Yellow background
+- Efficiency KPIs: Blue background
+
+=============================================================================
+SECTION 2: VALUE IMPACT BY PROCESS STEP (Center Column - 45%)
+=============================================================================
+
+HEADER: "Margin Impact Across 9 Pricing Steps"
+SUBHEADER: "Standardized per €100M Revenue"
+
+WATERFALL TABLE:
+┌──┬────────────────────────────┬──────────┬────────────┬──────────────┐
+│# │ Process Step               │ Impact   │ €/€100M    │ Key Driver   │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│1 │ Price Structure Definition │ Baseline │ €0M        │ Foundation   │
+│  │ (Strategic Pricing - AG)   │          │            │              │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│2 │ Initial Price Creation     │ -1pp     │ -€1.0M    │ WTP Gap      │
+│  │ (Product Pricing - AG)     │          │            │              │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│3 │ Central Price Adjustments  │ -1pp     │ -€1.0M    │ Competitive  │
+│  │ (Product Pricing - AG)     │          │            │ Alignment    │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│4 │ AG → Market Handover       │ Neutral  │ €0M        │ Transfer     │
+│  │ (Price Steering)           │          │            │ Accuracy     │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│5 │ Market Price Derivation    │ +0.5pp   │ +€0.5M    │ Retail       │
+│  │ (Segment Pricing - Market) │          │            │ Factor       │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│6 │ Market Price Changes       │ -3pp ⚠  │ -€3.0M ⚠  │ DISCOUNT     │
+│  │ (Segment Pricing - Market) │          │            │ LEAKAGE      │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│7 │ Campaigns & Special Prices │ -1pp     │ -€1.0M    │ Manual       │
+│  │ (Customer Pricing-Market)  │          │            │ Override     │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│8 │ Price Publication &        │ -0.5pp   │ -€0.5M    │ Execution    │
+│  │ Distribution (AG+Market)   │          │            │ Variance     │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│9 │ Audit, History &           │ Neutral  │ €0M        │ Governance   │
+│  │ Compliance (AG+Market)     │          │            │              │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│  │ TOTAL LEAKAGE              │ -6pp     │ -€6.0M    │              │
+├──┼────────────────────────────┼──────────┼────────────┼──────────────┤
+│  │ IMPROVEMENT POTENTIAL      │ +3pp     │ +€3.0M    │ 50% Recovery │
+└──┴────────────────────────────┴──────────┴────────────┴──────────────┘
+
+VISUAL ELEMENTS:
+- Row 6 (Discount Leakage): RED background + warning icon
+- Total Leakage row: YELLOW background
+- Improvement Potential row: GREEN background
+- Add small arrow icons: ↓ for negative, ↑ for positive, → for neutral
+
+CALLOUT BOX (below table):
+┌────────────────────────────────────────────────────────┐
+│ 💡 KEY INSIGHT: Step 6 (Market Price Changes)         │
+│ represents 50% of total leakage through discount      │
+│ governance gaps. Primary improvement opportunity.     │
+└────────────────────────────────────────────────────────┘
+
+=============================================================================
+SECTION 3: SOURCES & BENCHMARKS (Right Column - 30%)
+=============================================================================
+
+HEADER: "Industry Sources"
+SUBHEADER: "Margin Leakage Benchmarks"
+
+SOURCE TABLE:
+┌────────────────────────────────────────┐
+│ McKinsey - Pricing Waterfall Studies   │
+│ • Total leakage: 6-15pp                │
+│ • Discount stage: 40-60% of total      │
+│ • B2B industrial diagnostics           │
+├────────────────────────────────────────┤
+│ Bain & Company - Aftermarket           │
+│ • Discount leakage: 3-8pp              │
+│ • Focus: Governance controls           │
+│ • Automotive sector specific           │
+├────────────────────────────────────────┤
+│ Roland Berger - OEM Economics          │
+│ • Gross margins: 30-50%                │
+│ • Premium brand advantage              │
+│ • Aftermarket studies                  │
+├────────────────────────────────────────┤
+│ IHS Markit / S&P Global Mobility       │
+│ • Obsolescence: 2-5% typical           │
+│ • EV transition risk factors           │
+│ • Lifecycle analytics                  │
+├────────────────────────────────────────┤
+│ CLEPA - European Suppliers             │
+│ • Price realization: 88-94%            │
+│ • IAM competition pressure             │
+│ • Distribution economics               │
+└────────────────────────────────────────┘
+
+BMW SCALE BOX (highlighted):
+┌────────────────────────────────────────┐
+│ 📊 BMW AFTERSALES ESTIMATE             │
+│                                        │
+│ Revenue:        €4.5-5.5 billion      │
+│ Using:          €5.0B (mid-point)     │
+│                                        │
+│ Total Leakage:  €300M (6pp)           │
+│ Step 6 Impact:  €150M (3pp)           │
+│                                        │
+│ Improvement:    €150M potential       │
+│ Via Discount:   €100M (primary)       │
+└────────────────────────────────────────┘
+
+=============================================================================
+FOOTER NOTES (Bottom of Slide)
+=============================================================================
+
+Left-aligned small text:
+"Sources: McKinsey Pricing Studies, Bain Aftermarket Reports, Roland Berger Automotive, 
+IHS/S&P Mobility, CLEPA European Supplier Data | BMW revenue estimated from public 
+financial disclosures (Aftersales segment 2023-2024)"
+
+Right-aligned:
+"Prepared for: Vistex RFP Response | Confidential"
+
+=============================================================================
+DESIGN SPECIFICATIONS
+=============================================================================
+
+FONTS:
+- Title: Arial Bold 20pt
+- Section Headers: Arial Bold 14pt
+- Subheaders: Arial Bold 11pt
+- Body Text: Arial 10pt
+- Table Text: Arial 9pt
+- Footer: Arial 8pt
+
+SPACING:
+- 10px padding between sections
+- 5px padding within tables
+- 15px margin from slide edges
+
+BORDERS:
+- Section boxes: 1px solid grey (#D0D0D0)
+- Table cells: 0.5px solid light grey (#E0E0E0)
+- Callout boxes: 2px solid color-coded
+
+VISUAL ELEMENTS:
+- Use traffic light system: 🟢 (good) 🟡 (monitor) 🔴 (risk)
+- Arrow icons: ↑ ↓ → for trend indication
+- Warning icon: ⚠ for critical items
+- Info icon: 💡 for insights
+- Chart icon: 📊 for data
+
+=============================================================================
+POWERPOINT BUILD INSTRUCTIONS
+=============================================================================
+
+1. Set slide size to 16:9
+2. Apply BMW corporate template if available, otherwise use clean white background
+3. Create 3 text boxes for the 3 main sections
+4. Insert tables (not SmartArt) for better control
+5. Apply conditional formatting colors to highlight key rows
+6. Add shapes for callout boxes with rounded corners
+7. Group elements within each section for easy movement
+8. Lock aspect ratios when resizing
+9. Ensure all text is minimum 9pt for readability
+10. Test print preview to ensure clarity
+
+=============================================================================
+KEY MESSAGES TO EMPHASIZE
+=============================================================================
+
+1. "Step 6 (Discount Governance) = €3M leakage per €100M revenue"
+2. "50% of total margin leakage is recoverable through better processes"
+3. "Industry benchmarks consistently show 40-60% of leakage at execution stage"
+4. "BMW's €5B aftersales business has €300M leakage, €150M recoverable"
+5. "Discount control alone = €100M opportunity for BMW"
+
+=============================================================================
+ALTERNATIVE SIMPLIFIED VERSION (if space constrained)
+=============================================================================
+
+If the slide becomes too dense, create a 2-column version:
+
+LEFT (40%): Combined KPIs + Sources
+RIGHT (60%): Process Step Impact Table (larger, clearer)
+
+Remove detailed source descriptions, keep only key numbers and names.
+
+=============================================================================

@@ -1,0 +1,27 @@
+{
+  "Price Strategy": {
+    "bg": "#e8f0f8",
+    "tx": "#1a3a6e",
+    "bd": "#b8cde8"
+  },
+  "Price Setting": {
+    "bg": "#e8f3ee",
+    "tx": "#1a5a35",
+    "bd": "#b8dfc9"
+  },
+  "Price Steering": {
+    "bg": "#f0eaf8",
+    "tx": "#3d1a6e",
+    "bd": "#ccb8e8"
+  },
+  "Price Execution": {
+    "bg": "#fef3e2",
+    "tx": "#7a4000",
+    "bd": "#f0d090"
+  },
+  "Price Transactions": {
+    "bg": "#fce8e8",
+    "tx": "#6e1a1a",
+    "bd": "#e8b8b8"
+  }
+}
