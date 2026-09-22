@@ -1,0 +1,35 @@
+/* Design tokens, reset and page shell typography */
+
+:root {
+  --navy: #0E2841;
+  --navy2:#1a3a56;
+  --teal: #4698A5;
+  --tl: #d6edf0;
+  --tm: #8ec9d1;
+  --td: #2d7a88;
+  --bg: #e8edf2;
+  --fog: #f0f4f7;
+  --bd: #d0dae3;
+  --bdl: #e5ecf0;
+  --tx: #0E2841;
+  --mu: #5a7a96;
+  --lm: #8fa8be;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial,sans-serif;
+  background: var(--bg);
+  color: var(--tx);
+  font-size: 13px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}

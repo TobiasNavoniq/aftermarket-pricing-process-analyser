@@ -1,0 +1,112 @@
+/* Top navigation bar, app frame and footer */
+
+.nav {
+  background: var(--navy);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(70,152,165,.2);
+  flex-shrink: 0;
+}
+
+.nlogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nimg {
+  height: 28px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.nwm-a {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .5px;
+  line-height: 1.1;
+}
+
+.nwm-b {
+  font-size: 8px;
+  color: var(--tm);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ndiv {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,.15);
+}
+
+.ntitle {
+  font-size: 15px;
+  color: var(--tm);
+  font-weight: 300;
+}
+
+.nsub {
+  font-size: 8px;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .5px;
+}
+
+.nright {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.npill {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--tm);
+  background: rgba(70,152,165,.15);
+  border: 1px solid rgba(70,152,165,.3);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.nbtn {
+  font-family: Arial,sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: transparent;
+  color: rgba(255,255,255,.75);
+  cursor: pointer;
+}
+
+.nbtn:hover {
+  background: rgba(255,255,255,.1);
+  color: #fff;
+}
+
+.nbtn.p {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+.app {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.ttfoot {
+  flex-shrink: 0;
+  text-align: center;
+  color: var(--mu);
+  font-size: 10.5px;
+  padding: 8px 0;
+  border-top: 1px solid var(--bdl);
+  background: #fff;
+}

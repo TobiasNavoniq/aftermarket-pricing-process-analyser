@@ -1,0 +1,163 @@
+/* Coverage summary view */
+
+.smh {
+  background: var(--navy);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+  color: #fff;
+}
+
+.smtit {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.smsub {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+}
+
+.smst {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ssc {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.ssn {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.ssl {
+  font-size: 9px;
+  color: rgba(255,255,255,.45);
+  margin-top: 2px;
+}
+
+.smrows {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.smr {
+  background: #fff;
+  border: 1.5px solid var(--bdl);
+  border-radius: 9px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.smrn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.smrname {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tx);
+}
+
+.smrbar {
+  width: 100px;
+  height: 5px;
+  background: var(--fog);
+  border-radius: 3px;
+}
+
+.smrfill {
+  height: 5px;
+  border-radius: 3px;
+}
+
+.smrcnt {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.smrpct {
+  font-size: 10px;
+  color: var(--mu);
+  white-space: nowrap;
+  min-width: 32px;
+  text-align: right;
+}
+
+.cvsec {
+  background: #fff;
+  border: 1.5px solid var(--bdl);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.nextstep {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--navy);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+}
+
+.nextstep-icon {
+  font-size: 18px;
+  color: var(--tm);
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.nextstep strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12.5px;
+}
+
+.nextstep div:last-child {
+  font-size: 12px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.55;
+}
+
+.cvtit {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.cvsub {
+  font-size: 11px;
+  color: var(--mu);
+  margin-bottom: 12px;
+}
